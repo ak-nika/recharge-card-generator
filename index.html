@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recharge Card</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Recharge Card Generator</h1>
+
+    <section>
+      <main>
+        <div>
+          <span>Select Network</span>
+          <input
+            type="input"
+            list="networks"
+            id="network"
+            placeholder="Select Network"
+          />
+          <datalist id="networks">
+            <option value="MTN"></option>
+            <option value="Airtel"></option>
+            <option value="Glo"></option>
+            <option value="9Mobile"></option>
+          </datalist>
+        </div>
+
+        <div>
+          <span>Amount</span>
+          <input
+            type="input"
+            list="amounts"
+            id="amount"
+            placeholder="Select Amount"
+          />
+          <datalist id="amounts">
+            <option value="50"></option>
+            <option value="100"></option>
+            <option value="200"></option>
+            <option value="500"></option>
+            <option value="1000"></option>
+            <option value="2000"></option>
+            <option value="5000"></option>
+            <option value="10000"></option>
+            <option value="20000"></option>
+            <option value="50000"></option>
+            <option value="100000"></option>
+          </datalist>
+          <button id="generate">Generate Code</button>
+        </div>
+
+        <div>
+          <span>Code</span>
+          <div class="tooltip">
+            <span id="tooltip">Recharge code will be displayed here</span>
+            <input type="number" id="code" disabled />
+          </div>
+          <button id="save" disabled>Save Code</button>
+        </div>
+      </main>
+
+      <main>
+        <div>
+          <span>Recharge Pin</span>
+          <input type="text" id="pin" disabled />
+          <button id="recharge" disabled>Recharge</button>
+        </div>
+      </main>
+    </section>
+
+    <table>
+      <thead>
+        <tr>
+          <th>S/N</th>
+          <th>Network</th>
+          <th>Amount</th>
+          <th>Pin</th>
+          <th>Status</th>
+          <th>Date Created</th>
+          <th>Date Used</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody id="tableBody"></tbody>
+    </table>
+  </body>
+  <script src="script.js"></script>
+</html>

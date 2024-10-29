@@ -1,0 +1,197 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+body {
+  background-color: #f7f9fc;
+}
+h1 {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #333;
+}
+span {
+  color: #333;
+}
+section main {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+section main div {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+section main span {
+  font-size: 16px;
+  font-weight: 500;
+}
+section main input {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid #d1d5db;
+  background-color: white;
+  outline: none;
+}
+section main input:focus {
+  border: 1px solid #2563eb;
+}
+section main input:disabled {
+  cursor: not-allowed;
+}
+section main div .tooltip {
+  position: relative;
+  display: inline-block;
+  width: fit-content;
+}
+section main div .tooltip span {
+  visibility: hidden;
+  width: 18rem;
+  background-color: #333;
+  color: #fff;
+  white-space: nowrap;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+section main div .tooltip span::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: black transparent transparent transparent;
+}
+section main div .tooltip:hover span {
+  visibility: visible;
+  opacity: 1;
+}
+section main button {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border: none;
+  background-color: #2563eb;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.3s ease-in-out;
+}
+section main button:disabled {
+  cursor: not-allowed;
+  background-color: #d1d5db;
+}
+section main button:disabled:hover {
+  background-color: #d1d5db;
+}
+section main button:hover {
+  background-color: #1e40af;
+}
+section main:last-child {
+  margin-top: 3rem;
+}
+table {
+  width: 100%;
+  margin-top: 3rem;
+  border-collapse: collapse;
+  background-color: #fff;
+  font-family: Arial, sans-serif;
+  color: #333;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+thead {
+  background-color: #f7f7f7;
+}
+thead th {
+  padding: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.9em;
+  color: #333;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+tbody tr {
+  transition: background-color 0.3s ease;
+}
+tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+tbody tr:hover {
+  background-color: transparent;
+}
+td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #eee;
+  font-size: 0.9em;
+  color: #555;
+}
+td button.copy {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border: none;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.3s ease-in-out;
+  background-color: #28a745;
+}
+td button.copy:hover {
+  background-color: #0b8828;
+}
+td button.delete {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border: none;
+  background-color: #dc3545;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.3s ease-in-out;
+}
+td button.delete:hover {
+  background-color: #8b0000;
+}
+
+@media (max-width: 768px) {
+  thead {
+    display: none;
+  }
+
+  tr {
+    display: block;
+    margin-bottom: 15px;
+  }
+
+  td {
+    display: block;
+    text-align: right;
+    padding: 10px;
+    font-size: 0.85em;
+  }
+
+  td:before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #666;
+  }
+}
