@@ -7,7 +7,6 @@ const pinInput = document.getElementById("pin");
 const rechargeButton = document.getElementById("recharge");
 const tableBody = document.getElementById("tableBody");
 const tooltip = document.getElementById("tooltip");
-const recharges = [];
 
 if (!localStorage.getItem("recharges")) {
   localStorage.setItem("recharges", "[]");
@@ -23,7 +22,7 @@ const displayCodes = () => {
     <tr>
       <td>${index + 1}</td>
       <td>${recharge.network}</td>
-      <td>${recharge.amount}</td>
+      <td>₦${recharge.amount}</td>
       <td>*311*${recharge.code}#</td>
       <td>${recharge.isUsed ? "Used" : "Not Used"}</td>
       <td>${recharge.createdAt}</td>
